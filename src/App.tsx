@@ -1,10 +1,18 @@
 import SectionCard from './components/SectionCard'
 
+const concerns = [
+  '쉬고 있는데도 마음은 계속 바쁜 느낌',
+  '사람들과 조금 멀어진 듯한 감각',
+  '다시 시작하고 싶은데 첫걸음이 막막함',
+]
+
 const quickFacts = [
   ['운영 기간', '2026년 5월 ~ 11월 (16주 프로그램)'],
   ['대상', '19~39세 청년 60명 (광명시 우선, 인근 지역 가능)'],
   ['운영 장소', '광명시 청년동 · 온라인(디스코드) · 관내 공간'],
 ]
+
+const identityKeywords = ['관계', '일상', '감각', '표현', '시도']
 
 const welcomeFor = [
   '고립·은둔 상태를 경험했거나 관계가 멀어졌다고 느끼는 청년',
@@ -26,7 +34,6 @@ const tracks = [
 ]
 
 const labs = ['Atelier', 'Art Journal', "Writer's Room", 'Band Session']
-
 const alwaysOn = ['명상 (주 1회)', '자조모임 (격주)', '원데이 클래스 (총 5회)', '클럽 활동 (라이프·소셜·직장인 야간)']
 
 const expected = [
@@ -59,10 +66,10 @@ export default function App() {
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-stone-600 sm:text-base">치료가 아니라 경험으로, 조언이 아니라 선택으로 나를 다시 써 내려갑니다.</p>
           <div className="mt-8 grid gap-3 sm:flex sm:flex-row sm:gap-4">
-            <a href="#program" className="inline-flex w-full min-h-12 items-center justify-center sm:w-auto rounded-full bg-redefine-green px-6 py-3 font-semibold text-white shadow-[0_8px_18px_rgba(63,127,111,0.28)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-redefine-green focus-visible:ring-offset-2">
+            <a href="#program" className="inline-flex w-full min-h-12 items-center justify-center rounded-full bg-redefine-green px-6 py-3 font-semibold text-white shadow-[0_8px_18px_rgba(63,127,111,0.28)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-redefine-green focus-visible:ring-offset-2 sm:w-auto">
               프로그램 살펴보기
             </a>
-            <a href="#apply" className="inline-flex w-full min-h-12 items-center justify-center sm:w-auto rounded-full border-2 border-redefine-orange bg-white px-6 py-3 font-semibold text-redefine-orange shadow-[0_8px_18px_rgba(234,139,69,0.18)] transition hover:bg-redefine-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-redefine-orange focus-visible:ring-offset-2">
+            <a href="#apply" className="inline-flex w-full min-h-12 items-center justify-center rounded-full border-2 border-redefine-orange bg-white px-6 py-3 font-semibold text-redefine-orange shadow-[0_8px_18px_rgba(234,139,69,0.18)] transition hover:bg-redefine-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-redefine-orange focus-visible:ring-offset-2 sm:w-auto">
               참여 신청하기
             </a>
           </div>
@@ -79,10 +86,31 @@ export default function App() {
           </ul>
         </SectionCard>
 
+        <SectionCard title="이런 마음, 낯설지 않아요" description="충분히 자연스러운 신호입니다.">
+          <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+            {concerns.map((item) => (
+              <li key={item} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 text-sm leading-relaxed text-stone-700 shadow-sm sm:p-5 sm:text-base">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </SectionCard>
+
+        <SectionCard title="리디파인(REDEFINE)이라는 이름" description="나를 다시 정의하는 시간입니다.">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            {identityKeywords.map((word) => (
+              <div key={word} className="rounded-2xl border border-stone-200/80 bg-white/90 p-4 text-center shadow-sm sm:p-5">
+                <p className="text-xs text-stone-500 sm:text-sm">회복 키워드</p>
+                <p className="mt-1 text-lg font-bold text-redefine-green sm:mt-2 sm:text-xl">{word}</p>
+              </div>
+            ))}
+          </div>
+        </SectionCard>
+
         <SectionCard title="이런 분을 기다립니다" description="낙인 없이, 나의 속도로 시작할 수 있어요.">
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             {welcomeFor.map((item) => (
-              <li key={item} className="rounded-2xl bg-stone-50 p-4 text-sm leading-relaxed text-stone-700 sm:p-5 sm:text-base">
+              <li key={item} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 text-sm leading-relaxed text-stone-700 shadow-sm sm:p-5 sm:text-base">
                 {item}
               </li>
             ))}
@@ -101,7 +129,7 @@ export default function App() {
           </ol>
         </SectionCard>
 
-        <SectionCard title="경험 트랙 (공동 창조)">
+        <SectionCard title="경험 트랙">
           <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
             {tracks.map(([name, way, schedule]) => (
               <div key={name} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 shadow-sm sm:p-5">
@@ -147,7 +175,7 @@ export default function App() {
         <SectionCard title="협력 기관 안내" description="필요 시 전문기관과 자연스럽게 연계합니다.">
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             {partners.map((item) => (
-              <li key={item} className="rounded-2xl bg-stone-50 p-4 text-sm font-medium text-stone-700 sm:p-5 sm:text-base">
+              <li key={item} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 text-sm font-medium text-stone-700 shadow-sm sm:p-5 sm:text-base">
                 {item}
               </li>
             ))}
@@ -171,7 +199,7 @@ export default function App() {
           <a href="#apply" className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-redefine-orange px-8 py-3 font-semibold text-white shadow-[0_10px_20px_rgba(234,139,69,0.35)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#356e60]">
             참여 신청하기
           </a>
-          <p className="mt-5 text-xs text-white/80 sm:text-sm">문의: 광명시 청년동 (센터장 정재원 · 010-9566-7703)</p>
+          <p className="mt-5 text-xs text-white/80 sm:text-sm">문의: 광명시 청년동</p>
         </section>
       </main>
     </div>
