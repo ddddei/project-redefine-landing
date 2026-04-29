@@ -22,9 +22,9 @@ const welcomeFor = [
 ]
 
 const flowSteps = [
-  ['1~3주', '진입·방향 설정', '강점 기반 탐색과 트랙/랩 맛보기 후 나에게 맞는 경로 선택'],
-  ['4~13주', '공동 창조', '경험 트랙 + Redefine Lab + 상시 프로그램으로 나만의 변화 축적'],
-  ['14~16주', 'Redefine Day', '공연·전시·회고를 통해 변화 경험을 스스로 확인하고 공유'],
+  ['01', '1~3주', '진입·방향 설정', '강점 기반 탐색과 트랙/랩 맛보기 후 나에게 맞는 경로 선택'],
+  ['02', '4~13주', '공동 창조', '경험 트랙 + Redefine Lab + 상시 프로그램으로 나만의 변화 축적'],
+  ['03', '14~16주', 'Redefine Day', '공연·전시·회고를 통해 변화 경험을 스스로 확인하고 공유'],
 ]
 
 const tracks = [
@@ -129,11 +129,12 @@ export default function App() {
         <SectionCard id="program" caption="PROGRAM FLOW" title="16주 진행 구조" description="진입 → 공동 창조 → 공유의 3단계">
           <ol className="relative grid gap-3 sm:gap-4 lg:grid-cols-3">
             <div aria-hidden className="absolute left-[18px] top-6 hidden h-px w-[calc(100%-36px)] bg-gradient-to-r from-redefine-orange/30 via-redefine-green/25 to-redefine-orange/30 lg:block" />
-            {flowSteps.map(([period, title, desc]) => (
-              <li key={period} className="relative z-10 rounded-2xl border border-stone-200/80 bg-white/92 p-4 pl-6 shadow-sm sm:p-5 sm:pl-7">
+            {flowSteps.map(([step, period, title, desc]) => (
+              <li key={step} className="relative z-10 rounded-2xl border border-stone-200/80 bg-white/92 p-4 pl-6 shadow-sm sm:p-5 sm:pl-7">
                 <span aria-hidden className="absolute left-3 top-5 h-2.5 w-2.5 rounded-full bg-redefine-orange sm:left-4" />
                 <span aria-hidden className="absolute left-[18px] top-8 h-[calc(100%-2.8rem)] w-px bg-redefine-orange/25 sm:left-[22px]" />
-                <p className="text-xs font-semibold text-redefine-orange sm:text-sm">{period}</p>
+                <p className="text-[11px] font-bold tracking-[0.12em] text-redefine-orange/80 sm:text-xs">STEP {step}</p>
+                <p className="mt-1 text-xs font-semibold text-redefine-orange sm:text-sm">{period}</p>
                 <h3 className="mt-1 text-base font-bold sm:mt-2 sm:text-lg">{title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-stone-600 sm:mt-2">{desc}</p>
               </li>
@@ -209,6 +210,7 @@ export default function App() {
           <div aria-hidden className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-white/10 blur-2xl" />
           <h2 className="text-2xl font-bold leading-tight sm:text-4xl">지금의 나를 다시 정의하는 시간</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">2026년 5월~11월, 광명시 청년동에서 진행됩니다. 부담 없는 첫 연결을 지금 시작해보세요.</p>
+          <p className="mx-auto mt-2 max-w-xl text-xs text-white/75 sm:text-sm">지금 바로 완벽할 필요는 없습니다. 천천히 시작해도 괜찮습니다.</p>
           <a href="#apply" className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-redefine-orange px-8 py-3 font-semibold text-white shadow-[0_10px_20px_rgba(234,139,69,0.35)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#356e60]">
             참여 신청하기
           </a>
