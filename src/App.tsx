@@ -60,6 +60,9 @@ export default function App() {
           <div aria-hidden className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-[#f3d8be]/60 blur-2xl" />
           <div aria-hidden className="pointer-events-none absolute -left-16 -bottom-16 h-40 w-40 rounded-full bg-[#d8ece3]/70 blur-2xl" />
           <p className="text-xs font-semibold tracking-[0.16em] text-redefine-green sm:text-sm">광명시 청년동 · 2026 지역특화 청년사업</p>
+          <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-3 py-1 text-xs font-medium text-stone-700">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-redefine-orange" /> 16주 여정 · 자기 재정의
+          </div>
           <h1 className="mt-4 text-3xl font-extrabold leading-[1.22] tracking-[-0.01em] sm:text-5xl">멈춘 시간이 실패가 되지 않도록</h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-stone-700 sm:text-lg">
             Project Redefine은 준비중·고립 청년이 자기만의 속도로 다시 연결을 시작하는 16주 자기 재정의 여정입니다.
@@ -75,7 +78,7 @@ export default function App() {
           </div>
         </section>
 
-        <SectionCard title="한눈에 보는 사업 개요">
+        <SectionCard caption="PROGRAM OVERVIEW" title="한눈에 보는 사업 개요">
           <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4">
             {quickFacts.map(([label, value]) => (
               <li key={label} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 shadow-sm sm:p-5">
@@ -86,7 +89,7 @@ export default function App() {
           </ul>
         </SectionCard>
 
-        <SectionCard title="이런 마음, 낯설지 않아요" description="충분히 자연스러운 신호입니다.">
+        <SectionCard caption="YOU ARE NOT ALONE" title="이런 마음, 낯설지 않아요" description="충분히 자연스러운 신호입니다.">
           <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4">
             {concerns.map((item) => (
               <li key={item} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 text-sm leading-relaxed text-stone-700 shadow-sm sm:p-5 sm:text-base">
@@ -96,7 +99,7 @@ export default function App() {
           </ul>
         </SectionCard>
 
-        <SectionCard title="리디파인(REDEFINE)이라는 이름" description="나를 다시 정의하는 시간입니다.">
+        <SectionCard caption="REDEFINE IDENTITY" title="리디파인(REDEFINE)이라는 이름" description="나를 다시 정의하는 시간입니다.">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {identityKeywords.map((word) => (
               <div key={word} className="rounded-2xl border border-stone-200/80 bg-white/90 p-4 text-center shadow-sm sm:p-5">
@@ -107,7 +110,7 @@ export default function App() {
           </div>
         </SectionCard>
 
-        <SectionCard title="이런 분을 기다립니다" description="낙인 없이, 나의 속도로 시작할 수 있어요.">
+        <SectionCard caption="WHO CAN JOIN" title="이런 분을 기다립니다" description="낙인 없이, 나의 속도로 시작할 수 있어요.">
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             {welcomeFor.map((item) => (
               <li key={item} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 text-sm leading-relaxed text-stone-700 shadow-sm sm:p-5 sm:text-base">
@@ -117,10 +120,12 @@ export default function App() {
           </ul>
         </SectionCard>
 
-        <SectionCard id="program" title="16주 진행 구조" description="진입 → 공동 창조 → 공유의 3단계">
+        <SectionCard id="program" caption="PROGRAM FLOW" title="16주 진행 구조" description="진입 → 공동 창조 → 공유의 3단계">
           <ol className="grid gap-3 sm:gap-4 lg:grid-cols-3">
             {flowSteps.map(([period, title, desc]) => (
-              <li key={period} className="rounded-2xl border border-stone-200/80 bg-white/90 p-4 shadow-sm sm:p-5">
+              <li key={period} className="relative rounded-2xl border border-stone-200/80 bg-white/90 p-4 pl-6 shadow-sm sm:p-5 sm:pl-7">
+                <span aria-hidden className="absolute left-3 top-5 h-2.5 w-2.5 rounded-full bg-redefine-orange sm:left-4" />
+                <span aria-hidden className="absolute left-[18px] top-8 h-[calc(100%-2.8rem)] w-px bg-redefine-orange/25 sm:left-[22px]" />
                 <p className="text-xs font-semibold text-redefine-orange sm:text-sm">{period}</p>
                 <h3 className="mt-1 text-base font-bold sm:mt-2 sm:text-lg">{title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-stone-600 sm:mt-2">{desc}</p>
@@ -129,7 +134,7 @@ export default function App() {
           </ol>
         </SectionCard>
 
-        <SectionCard title="경험 트랙">
+        <SectionCard caption="EXPERIENCE TRACK" title="경험 트랙">
           <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
             {tracks.map(([name, way, schedule]) => (
               <div key={name} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 shadow-sm sm:p-5">
@@ -141,7 +146,7 @@ export default function App() {
           </div>
         </SectionCard>
 
-        <SectionCard title="Redefine Lab & 상시 프로그램">
+        <SectionCard caption="LAB & COMMUNITY" title="Redefine Lab & 상시 프로그램">
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 shadow-sm sm:p-5">
               <h3 className="text-base font-bold sm:text-lg">Redefine Lab (복수 참여 가능)</h3>
@@ -162,7 +167,7 @@ export default function App() {
           </div>
         </SectionCard>
 
-        <SectionCard title="기대 변화">
+        <SectionCard caption="EXPECTED CHANGE" title="기대 변화">
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             {expected.map((item) => (
               <li key={item} className="rounded-2xl border border-stone-200/80 bg-white/95 p-4 text-sm leading-relaxed shadow-sm sm:p-5 sm:text-base">
@@ -172,7 +177,7 @@ export default function App() {
           </ul>
         </SectionCard>
 
-        <SectionCard title="협력 기관 안내" description="필요 시 전문기관과 자연스럽게 연계합니다.">
+        <SectionCard caption="PARTNERS" title="협력 기관 안내" description="필요 시 전문기관과 자연스럽게 연계합니다.">
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             {partners.map((item) => (
               <li key={item} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 text-sm font-medium text-stone-700 shadow-sm sm:p-5 sm:text-base">
@@ -182,7 +187,7 @@ export default function App() {
           </ul>
         </SectionCard>
 
-        <SectionCard title="자주 묻는 질문">
+        <SectionCard caption="FAQ" title="자주 묻는 질문">
           <div className="space-y-3">
             {faqs.map(([q, a]) => (
               <details key={q} className="rounded-2xl border border-white/80 bg-gradient-to-b from-stone-50 to-[#fffdf9] p-4 shadow-sm sm:p-5">
@@ -193,7 +198,8 @@ export default function App() {
           </div>
         </SectionCard>
 
-        <section id="apply" className="rounded-[2rem] border border-white/20 bg-gradient-to-br from-[#3f7f6f] to-[#356e60] px-6 py-10 text-center text-white shadow-card sm:px-10 sm:py-12">
+        <section id="apply" className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-br from-[#3f7f6f] to-[#356e60] px-6 py-10 text-center text-white shadow-card sm:px-10 sm:py-12">
+          <div aria-hidden className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-white/10 blur-2xl" />
           <h2 className="text-2xl font-bold leading-tight sm:text-4xl">지금의 나를 다시 정의하는 시간</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">2026년 5월~11월, 광명시 청년동에서 진행됩니다. 부담 없는 첫 연결을 지금 시작해보세요.</p>
           <a href="#apply" className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-redefine-orange px-8 py-3 font-semibold text-white shadow-[0_10px_20px_rgba(234,139,69,0.35)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#356e60]">
