@@ -11,8 +11,19 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(246, 205, 167, 0.2), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(124, 174, 152, 0.18), transparent 28%),
+    #f7f3eb;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(63, 127, 111, 0.18);
 }
