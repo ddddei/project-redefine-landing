@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #2e2a25;
+  background-color: #f7f3eb;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 6%, rgba(246, 205, 167, 0.24), transparent 34%),
+    radial-gradient(circle at 86% 14%, rgba(124, 174, 152, 0.18), transparent 30%),
+    linear-gradient(180deg, #f7f3eb 0%, #f5f2e9 40%, #eff5f0 100%);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(63, 127, 111, 0.18);
+}
