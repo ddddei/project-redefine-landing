@@ -55,13 +55,19 @@ const faqs = [
 export default function App() {
   return (
     <div className="min-h-screen bg-redefine-background text-redefine-text">
-      <main className="mx-auto w-full max-w-6xl space-y-7 px-4 py-6 sm:space-y-9 sm:px-6 sm:py-10 lg:px-8">
+      <main className="relative mx-auto w-full max-w-6xl space-y-7 px-4 py-6 sm:space-y-9 sm:px-6 sm:py-10 lg:px-8">
+        <div aria-hidden className="pointer-events-none absolute left-1/2 top-40 hidden h-[82%] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-redefine-green/20 to-transparent lg:block" />
         <section className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-br from-[#f9efe3] via-[#fffaf2] to-[#edf7f2] px-6 py-10 shadow-card sm:px-10 sm:py-14">
           <div aria-hidden className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-[#f3d8be]/60 blur-2xl" />
           <div aria-hidden className="pointer-events-none absolute -left-16 -bottom-16 h-40 w-40 rounded-full bg-[#d8ece3]/70 blur-2xl" />
           <p className="text-xs font-semibold tracking-[0.16em] text-redefine-green sm:text-sm">광명시 청년동 · 2026 지역특화 청년사업</p>
-          <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-3 py-1 text-xs font-medium text-stone-700">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-redefine-orange" /> 16주 여정 · 자기 재정의
+          <div className="mt-3 flex flex-wrap gap-2">
+            {['16주 여정', '광명시 청년동', '관계·일상·표현 회복'].map((chip) => (
+              <span key={chip} className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-3 py-1 text-xs font-medium text-stone-700">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-redefine-orange" />
+                {chip}
+              </span>
+            ))}
           </div>
           <h1 className="mt-4 text-3xl font-extrabold leading-[1.22] tracking-[-0.01em] sm:text-5xl">멈춘 시간이 실패가 되지 않도록</h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-stone-700 sm:text-lg">
@@ -121,9 +127,10 @@ export default function App() {
         </SectionCard>
 
         <SectionCard id="program" caption="PROGRAM FLOW" title="16주 진행 구조" description="진입 → 공동 창조 → 공유의 3단계">
-          <ol className="grid gap-3 sm:gap-4 lg:grid-cols-3">
+          <ol className="relative grid gap-3 sm:gap-4 lg:grid-cols-3">
+            <div aria-hidden className="absolute left-[18px] top-6 hidden h-px w-[calc(100%-36px)] bg-gradient-to-r from-redefine-orange/30 via-redefine-green/25 to-redefine-orange/30 lg:block" />
             {flowSteps.map(([period, title, desc]) => (
-              <li key={period} className="relative rounded-2xl border border-stone-200/80 bg-white/90 p-4 pl-6 shadow-sm sm:p-5 sm:pl-7">
+              <li key={period} className="relative z-10 rounded-2xl border border-stone-200/80 bg-white/92 p-4 pl-6 shadow-sm sm:p-5 sm:pl-7">
                 <span aria-hidden className="absolute left-3 top-5 h-2.5 w-2.5 rounded-full bg-redefine-orange sm:left-4" />
                 <span aria-hidden className="absolute left-[18px] top-8 h-[calc(100%-2.8rem)] w-px bg-redefine-orange/25 sm:left-[22px]" />
                 <p className="text-xs font-semibold text-redefine-orange sm:text-sm">{period}</p>
